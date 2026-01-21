@@ -35,4 +35,13 @@ async def check_achievements(user_id: int, bot, chat_id):
             await session.commit()
 
             # Отправка сообщения в чат
-            await bot.send_message(chat_id, f"🎉 Поздравляем, <a href='tg://user?id={user_id}'>пользователь</a>! {ach.description}")
+            await congratulate_user(message.from_user, volume, message)
+
+
+async def congratulate_user(user: types.User, volume: float, message: types.Message):
+    """
+    Отправляет сообщение о выпитом объёме пользователем с кликабельным именем.
+    """
+    name = user.full_name  # или user.first_name
+    text = f"🎉 Поздравляем, <a href='tg://user?id={user.id}'>{name}</a>! Выпито {volume} литров пива 🍺"
+    await message.answer(text, parse_mode='HTML')
