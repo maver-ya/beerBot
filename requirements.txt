@@ -1,0 +1,6 @@
+SQLAlchemy~=2.0.45
+python-dotenv~=1.2.1
+aiogram==3.*
+sqlalchemy==2.*
+aiosqlite
+python-dotenv

@@ -1,0 +1,42 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===== Virtual environment =====
+.venv/
+venv/
+env/
+
+# ===== Environment variables =====
+.env
+.env.*
+
+# ===== Logs =====
+*.log
+
+# ===== Database =====
+*.sqlite
+*.db
+
+# ===== Migrations (если потом подключишь alembic) =====
+alembic/versions/*.pyc
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.iml
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Tests =====
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ===== Build =====
+build/
+dist/
+*.egg-info/
