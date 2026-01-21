@@ -2,6 +2,8 @@ from sqlalchemy import select
 from bot.db.session import AsyncSessionLocal
 from bot.db.models.achievement import Achievement
 from bot.db.models.drink import DrinkEvent, DrinkParticipant
+from aiogram.types import User, Message
+
 
 # Достижения в литрах
 ACHIEVEMENT_LEVELS = [1, 5, 10, 25, 50]
@@ -38,7 +40,8 @@ async def check_achievements(user_id: int, bot, chat_id):
             await congratulate_user(message.from_user, volume, message)
 
 
-async def congratulate_user(user: types.User, volume: float, message: types.Message):
+async def congratulate_user(user: User, volume: float, message: Message):
+
     """
     Отправляет сообщение о выпитом объёме пользователем с кликабельным именем.
     """
